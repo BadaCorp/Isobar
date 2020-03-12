@@ -298,7 +298,7 @@ section table tr td:hover:not(.active)
     position: absolute;
     left: 50%;
     top: 50%;    
-    margin-left: -110px;
+    margin-left: -105px;
     margin-top: -50px;
     padding: 5px 35px;
 
@@ -316,7 +316,7 @@ section table tr td:hover:not(.active)
     position: absolute;
     left: 50%;
     top: 50%;    
-    margin-left: -110px;
+    margin-left: -105px;
     margin-top: -50px;
     padding: 5px 35px;
 
