@@ -288,6 +288,7 @@ section table tr td:hover:not(.active)
 .popup-container
 {
     position: relative;
+    width: auto;
 }
 
 #popupbox1
