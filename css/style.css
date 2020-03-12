@@ -1,0 +1,386 @@
+body
+{
+  background-image: url("../Images/Background/background_image.png");
+  background-color: #cccccc;
+  background-repeat: repeat;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+article
+{
+    padding: 0px;
+    text-align: center;
+    margin: auto;
+}
+
+#carousel-size
+{
+    border: 0px dotted #FFD700;
+    padding: 1px;
+    width: 900px;
+    margin: auto;
+    max-width: 100%;
+}
+
+.promos
+{
+
+/*    padding: 50px;
+    background-color: aquamarine;*/
+}
+
+
+/* Universal Box sizing with inheritance */
+html 
+{
+    box-sizing: border-box;
+}
+
+*, *:before, *:after 
+{
+    box-sizing: inherit;
+}
+
+/*
+*
+{
+  box-sizing: border-box;
+}
+*/
+
+#text-center
+{
+  text-align: center;
+}
+
+#golden-text
+{
+  color: #FFD700;
+}
+
+#saddleBrownText
+{
+  color: #8B4513;
+}
+
+#saddleBrownCenterText
+{
+  color: #8B4513;
+  text-align: center;
+}
+
+
+/*----- Horizontal Navigation Bar -----*/
+.Logo
+{
+    font-family: 'Londrina Shadow', Times, serif;
+    font-weight: bold;
+    position: relative;
+}
+
+#navbarH
+{  
+  position: relative;
+}
+
+.nav-border-right   /*#navbarH li #test*/
+{
+  border-right: 1px solid #FFD700;
+}
+
+#navbarH li a 
+{
+  display: inline-block;
+  color: #333;                      /*#DCDCDC;*/
+  padding: 14px 16px;
+  text-decoration: none;
+  list-style-type: none;
+  /*position: relative;*/
+  font-weight: bold;
+}
+
+#navbarH li a:hover:not(.active) 
+{
+    background-color: #FFD700;     /*Golden Hover*/
+    color: #FF0000;                /* red text on hover */
+}
+
+#navbarH .active 
+{
+  color: #FFFFFF;               /*White active text*/
+  background-color: #8B4513;    /*Black active background*/
+}
+
+.Logo a:hover:not(.active)
+{
+  color: gold;                  /*Golden hover non-active Link*/
+}
+/***** End Horizontal Navigation Bar *****/
+
+
+/********* Vertical Navigation Bar *********/
+aside 
+{
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #8B4513;
+    opacity: .9;
+    width: auto;
+    position: fixed;
+    /*position: relative;*/    
+    z-index: 1;
+}
+
+
+aside nav ul li a
+{
+    padding: 0px;
+    border-bottom: 1px solid #8B4513;    
+    display: block;
+    color: #000;
+}
+
+aside li a.active
+{
+    background-color: #8B4513;
+    color: #FFF;    
+}
+
+aside li a:hover:not(.active) 
+{
+    background-color: #FFD700;
+    color: #FF0000;                  red text on hover 
+    font-weight: bold;
+}
+/***********End Vertical Navigation Bar**********/
+
+
+/********* Main Body ********/
+.main
+{
+  margin-top: 85px;
+  /*border: 2px solid #bbb;*/         /*grey*/
+  text-align: center;
+  /*margin-left: 26.5%;
+  margin-right: 26.5%;*/
+  /*margin-left: 22%;
+  margin-right: 22%;*/
+}
+
+/*
+.mySlides 
+{
+  display: none;    
+}
+*/
+
+section div div img
+{
+  /*text-align: center;*/
+  /*height: 150px;
+  /*width: 150px;*/
+  border: 1px solid #8B4513;    /* Saddle Brown border */
+}
+
+#notepad                    /*Ivorish background for displaying text*/
+{
+    border: 3px dotted #FFD700;
+    color: #000;
+    background-color: #FFF;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 900px;
+    max-width: 100%;
+    text-align: left;
+    opacity: 0.9;
+}
+
+div .shelf
+{
+  margin-top: -150px;
+  margin-left: 250px;
+  height: auto;
+}
+
+section table
+{
+    padding; 0px;
+    margin-top: 5%;
+    margin-left: 20%;
+    position: fixed;
+    display: table-row;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+#about-table
+{
+     position: relative;
+}
+
+section table
+{
+    padding: 0px;
+}
+
+section table tr td.active
+{
+    background-color: #8B4513;
+    color: #FFF;    
+}
+
+section table tr td:hover:not(.active) 
+{
+    background-color: #FFD700;
+    color: #FF0000;                  red text on hover 
+    font-weight: bold;
+}
+
+/*table
+{  
+  margin: auto;
+  border: 1px solid #8B4513;
+  width: 75%;
+  text-align: center;
+}*/
+
+/*th 
+{
+  border: 1px solid #8B4513;
+  background-color: #8B4513;
+  color: white;
+}*/
+
+/*tr
+{
+  border: 1px solid #8B4513;
+}*/
+
+/*tr:nth-child(even)
+{
+  background-color: #f2f2f2
+}*/
+
+
+
+/********* End Main Body ********/
+
+
+/***************** Grid **************/
+/*Clear the flow*/
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*All the columns should be float to the left, and have a padding of 15px*/
+[class*="col-"] 
+{
+  float: left;
+  padding: 15px;
+}
+
+.menu ul 
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li 
+{
+  padding: 8px;
+  margin-bottom: 7px;
+  /*background-color: #33b5e5;*/
+  /*color: #ffffff;*/
+  /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+}
+
+/*.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}*/
+
+/***************** End Grid **************/
+
+
+/***************** Authentication **************/
+#popupbox1
+{
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 50px; 
+  padding-top: 10px; 
+  padding-left: 10px;
+  width: 20%; 
+  height: 250px; 
+  position: absolute; 
+  background: #FBFBF0; 
+  border: solid #8B4513 2px; 
+  z-index: 9; 
+  font-family: arial; 
+  visibility: hidden; 
+}
+
+#popupbox2
+{
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 50px; 
+  padding-top: 10px; 
+  padding-left: 10px;
+  width: 20%; 
+  height: 310px; 
+  position: absolute; 
+  background: #FBFBF0; 
+  border: solid #8B4513 2px; 
+  z-index: 9; 
+  font-family: arial; 
+  visibility: hidden; 
+}
+
+/***************** End Authentication **************/
+
+
+/***************** Footer **************/
+/*.panel-footer
+{
+  margin-top: 15px;
+}*/
+
+footer
+{
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #000000;
+    opacity: .9;
+    position: absolute;
+}
+
+hr
+{
+    background-color: #FFD700;      /* golden border */
+}
+
+#map
+{
+  border: 2px solid #FFD700;          
+  height: 170px;
+  width: 270px;
+  margin: auto;
+}
+/************** End Footer *************/
+
+
+
