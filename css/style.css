@@ -195,12 +195,12 @@ section div div img
     max-width: 100%;
     text-align: left;
     opacity: 0.9;
+    position: relative;
 }
 
 textarea
 {
     position: relative;
-    margin: 100%;
 }
 
 div .shelf
