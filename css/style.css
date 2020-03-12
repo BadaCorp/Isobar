@@ -197,6 +197,12 @@ section div div img
     opacity: 0.9;
 }
 
+textarea
+{
+    position: relative;
+    /*margin: 100%;*/
+}
+
 div .shelf
 {
   margin-top: -150px;
