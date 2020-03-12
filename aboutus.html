@@ -1,100 +1,149 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-	<head>
-		<title>About Us</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="Images/Logo/Isobar_Logo.ico" type="image/ico">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
-	</head>
+<html lang="en">
 
-	<body onload="welcome(); printErr()">
-		<!---------- Login/Register ---------->
-		<div id="popupbox1"> 
-			<form id="login" action="" method="post">
-				<a href="javascript:login('hide'); javascript:register('show');">Not registered?</a>
-				<center>Username:</center>
-				<center><input name="username" size="14" /></center>
-				<center>Password:</center>
-				<center><input name="password" type="password" size="14" /></center>
-				<center><button onclick="loginInfo()">submit</center>
-				<font id="error" color="red"></font>
-			</form>
-			<br />
-			<center><a href="javascript:login('hide');">close</a></center> 
-		</div>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <title>Isobar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <script src="js/script.js" defer></script>
+        <link rel="icon" href="Images/Logo/Isobar_Logo.ico" type="image/ico">
+        <link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
+        
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
 
-		<div id="popupbox2"> 
-			<form id="register" action="" method="post">
-				<a href="javascript:register('hide'); javascript:login('show');">Login instead</a>
-				<center>Username:</center>
-				<center><input name="username" size="14"/></center>
-				<center>password:</center>				
-				<center><input name="password" type="password" size="14" /></center>
-				<center>Re-enter password:</center>	
-				<center><input name="rpassword" type="rpassword" size="14" /></center>
-				<center><button onclick="registerInfo()">submit</center>
-			</form>
-			<br />
-			<center><a href="javascript:register('hide');">close</a></center> 
-		</div> 		
-		<!---------- End Login/Register ---------->
+        <!-- Horizontal NAVBAR -->
+    <nav class="navbar navbar-expand-md bg-light justify-content-center navbar-light" id="navbarH" role="navigation">
+            <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+            <!-- Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <!-- Logo -->
+            <div class="Logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Logo/Isobar_Logo.ico" alt="Logo"/>isobar
+            </a></div>
+                
+                <!-- Navigation -->
+            <ul class="navbar-nav">
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="menus.html">MENUS</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="events.html">EVENTS</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link active" href="aboutus.html">ABOUT US</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="contactus.html">CONTACT US</a>
+                </li>          
+            </ul>
+            
+                <!-- Login Button -->
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" id="greetings" href="javascript:login('show')">
+                        <button style='font-size:16px'>Log in 
+                            <i class='fas fa-sign-in-alt'></i></button>
+                    </a>
+                </li>
+                <div id="logout"></div>
+                
+                
+                <!--<div id="greetings"><a href="javascript:login('show');">Login</a></div>
+                <div id="logout"></div>-->  
+            </ul>
+        </div>
+    </nav>
+         <!-- End Horizontal NAVBAR -->   
 
+        <!-- Body -->
+    <body onload="welcome(); printErr()">
+        <header>
+            <h1 class="text-center text-warning bg-dark">Since 2019</h1>
+        </header>
+        
+        <article>
+                <!-- Login/Register -->
+            <section>
+                <div id="popupbox1"> 
+                    <form id="login" action="" method="post">
+                        <a href="javascript:login('hide'); javascript:register('show');">Not registered?</a>
+                        <center>Username:</center>
+                        <center><input name="username" size="14" /></center>
+                        <center>Password:</center>
+                        <center><input name="password" type="password" size="14" /></center><br/>
+                        <center><button onclick="loginInfo()">submit</button></center>
+                        <font id="error" color="red"></font>
+                    </form>
+                    <br/>
+                    <center><a href="javascript:login('hide');">close</a></center> 
+                </div>
+                    
+                <div id="popupbox2"> 
+                    <form id="register" action="" method="post">
+                        <a href="javascript:register('hide'); javascript:login('show');">Login instead</a>
+                        <center>Username:</center>
+                        <center><input name="username" size="14"/></center>
+                        <center>password:</center>				
+                        <center><input name="password" type="password" size="14" /></center>
+                        <center>Re-enter password:</center>	
+                        <center><input name="rpassword" type="rpassword" size="14" /></center><br/>
+                        <center><button onclick="registerInfo()">submit</button></center>
+                    </form>
+                    <br/> 
+                    <center><a href="javascript:register('hide');">close</a></center> 
+                </div> 	
+            </section>
+                <!-- End Login/Register -->        
 
-		<!---------- Header ---------->
-		<div id="navbarH">
-			<section class="Logo"><a href="index.html"><img src="Images/Logo/Isobar_Logo.ico" alt="Logo" title="(1) Shutterstock (2019). Accessed January 13th, 2019. URL: https://www.shutterstock.com/search/isobar. (2) Pngtree (2019). Accessed January 27th, 2019. URL: https://pngtree.com/freepng/liquid-spilled-beer_608730.html"></img></a> isobar </section>
+                <!-- Main content -->
+            <div class="container-fluid">         
+                <div class="row">
+                    <section id="notepad">                    
+                        <div class="col-sm-9">
+                            <p>Isobar has provided Manitoba with the very best in casual dining, relaxing, and a vibrant night life. Our bar is popular for not only serving alcohols but also providing our valued consumers with the opportunity to order alcohol on our website and have them delivered to your door.</p>
+                            <p>We specialize in serving five types of spirits, namely:</p>
+                            
 
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="menus.html">MENUS</a></li>
-				<li><a href="events.html">EVENTS</a></li>
-				<li><a href="aboutus.html" class="active">ABOUT US</a></li>
-				<li><a href="contactus.html">CONTACT US</a></li>
-
-				<div id="greetings"><a href="javascript:login('show');">Login</a></div>
-				<div id="logout"></div>					
-			</ul>
-		</div> 
-		<!---------- End Header ---------->
-
-
-		<!---------- Main ---------->
-		<MARQUEE><FONT COLOR="RED">UNDER CONSTRUCTION!!!!</MARQUEE>
-		
-		<div class="main">
-			<div id="notepad">
-				<h1 id="text-center"><strong id="saddleBrownText">About Us</strong></h1>
-				<p>Isobar has provided Athabasca with the very best in casual dining, relaxing, and a vibrant night life. Our bar is popular for not only serving alcohols but also providing our valued consumers with the opportunity to order alcohol on our website and have them delivered to your door.</p>
-				<p>We specialize in serving five types of spirits, namely:</p>
-				<table id="table">
-					<tr>
-						<th>Brands</th>
-						<th>Some spirits</th>
-					</tr>
-					<tr>
-						<td>Brandy</td>
-						<td>Ansac Cognac, Calvados, E&J, Martell</td>
-					</tr>
-					<tr>
-						<td>Rum</td>
-						<td>Calico Jack Cake Rum, Coruba Dark Rum, Cruzan Black Strap, Don Q Gold Rum</td>
-					</tr>
-					<tr>
-						<td>Tequila</td>
-						<td>Don Julio Real, Herradura Silver, Lunazul Blanco, Resado-Avion</td>
-					</tr>
-					<tr>
-						<td>Vodka</td>
-						<td>Burnetts Candy Cane Flav, Chopin Potato Vodka, Smirnoff Sorbet Light White Peach, Three Olives Root Beer</td>
-					</tr>
-					<tr>
-						<td>Whisky</td>
-						<td>Bartons Canadian Whisky, Blonde Whiskey, Virgin Bourbon, Woodford Reserve Bourbon</td>
-					</tr>
-				</table>
+                            <table border="1" id="about-table">
+                                <tr>
+                                    <th>Brands</th>
+                                    <th>Some spirits</th>
+                                </tr>
+                                <tr>
+                                    <td>Brandy</td>
+                                    <td>Ansac Cognac, Calvados, E &amp; J, Martell</td>
+                                </tr>
+                                <tr>
+                                    <td>Rum</td>
+                                    <td>Calico Jack Cake Rum, Coruba Dark Rum, Cruzan Black Strap, Don Q Gold Rum</td>
+                                </tr>
+                                <tr>
+                                    <td>Tequila</td>
+                                    <td>Don Julio Real, Herradura Silver, Lunazul Blanco, Resado-Avion</td>
+                                </tr>
+                                <tr>
+                                    <td>Vodka</td>
+                                    <td>Burnetts Candy Cane Flav, Chopin Potato Vodka, Smirnoff Sorbet Light White Peach, Three Olives Root Beer</td>
+                                </tr>
+                                <tr>
+                                    <td>Whisky</td>
+                                    <td>Bartons Canadian Whisky, Blonde Whiskey, Virgin Bourbon, Woodford Reserve Bourbon</td>
+                                </tr>
+                            </table>
+                            
 				<p>Asides the spirits, we are also popular for our vibrant nightlife. We host a number of parties or events, where some artists make beauStiful performances for our guests. Some of our regular and popular performers include:</p>
 				<ul>
 					<li>Kathy Pearson</li>
@@ -102,45 +151,50 @@
 					<li>James Leroy</li>
 				</ul>
 				<p1>You are welcomed to enjoy a thriling day or night at our bar.</p1>
-			</div>		
-	
-		</div>
-		<!---------- End Main ---------->
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+        </article>
+            <!-- End Main -->    
 
-		<!-- Footer -->
-		<footer class="panel-footer" id="text-center">
-			<div class="container">
-				<div class="row">
-					<section class="col-3">
-						<span id="golden-text"><strong>Hours:</strong></span><br/>
-						Mon-Fri: 11:00am - 2:00am<br/>
-						Saturday: 9:00am - 2:00am<br/>
-						Sunday: 9:00 am - Midnight
-						<hr>
-					</section>
-					<section class="col-3">
-						<span id="golden-text"><strong>Address:</strong></span><br/>
-						Athabasca University<br/>
-						Athabasca, Alberta
-						AB T9S 3A3 Canada
-						<p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
-						<hr>
-					</section>
-					<section class="col-3" >
-						<div>
-							<span id="golden-text"><strong>Map</strong></span><br/>
-							<a href="https://goo.gl/maps/mYdPFCnrHzG2" target="_blank">
-								<div >
-									<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2304.696758390333!2d-113.31073378455636!3d54.71495807901821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a3d71de4f08a5b%3A0x438e5ad54402680a!2sAthabasca+University!5e0!3m2!1sen!2sca!4v1547257659023" allowfullscreen></iframe>
-								</div>
-							</a>
-						</div>
-					</section>
+		  <!-- Footer -->        
+        <footer class="container-fluid" >
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 text-center">
+				    <span class="text-warning"><strong>Hours:</strong></span><br/>
+				    Mon-Fri: 11:00am - 2:00am<br/>
+				    Saturday: 9:00am - 2:00am<br/>
+				    Sunday: 9:00 am - Midnight
+				    <hr/>
 				</div>
-				<div>&copy; Copyright Isobar 2019</div>
-			</div>
-		</footer>
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                    <span class="text-warning"><strong>Address:</strong></span><br/>
+                    <p>University of Manitoba<br/>
+                     66 Chancellors Cir,<br/>
+                     Winnipeg, MB R3T 2N2<br/>
+                    * Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+                    <hr/>
+				</div>
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                    <span class="text-warning"><strong>Map</strong></span><br/>
+                    <a href="https://goo.gl/maps/mYdPFCnrHzG2" target="_blank">
+                        <div >
+                            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.8599392726915!2d-97.1388145842918!3d49.80750077939183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e0!3m2!1sen!2sca!4v1583771368117!5m2!1sen!2sca"  allowfullscreen=""></iframe>
+                        </div>
+                    </a>
+				</div>
+            </div>
+            <p class="text-center">2020 &copy; Developed by <a href="https://github.com/BadaCorp/isobar">BadaCorp</a></p>
+        </footer>
+		  <!-- End Footer -->
 
-		<script src="js/script.js"></script>
-	</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 	</body> 
+		<!-- End Body -->
 </html>
