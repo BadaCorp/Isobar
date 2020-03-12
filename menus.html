@@ -1,279 +1,568 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-	<head>
-		<title>Menus</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" href="Images/Logo/Isobar_Logo.ico" type="image/ico">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	</head>
+<html lang="en">
 
-	<body onload="welcome(); printErr()">
-		<!---------- Login/Register ---------->
-		<div id="popupbox1"> 
-			<form id="login" action="" method="post">
-				<a href="javascript:login('hide'); javascript:register('show');">Not registered?</a>
-				<center>Username:</center>
-				<center><input name="username" size="14" /></center>
-				<center>Password:</center>
-				<center><input name="password" type="password" size="14" /></center>
-				<center><button onclick="loginInfo()">submit</center>
-				<font id="error" color="red"></font>
-			</form>
-			<br />
-			<center><a href="javascript:login('hide');">close</a></center> 
-		</div>
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <title>Isobar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <script src="js/script.js" defer></script>
+        <link rel="icon" href="Images/Logo/Isobar_Logo.ico" type="image/ico">
+        <link href='https://fonts.googleapis.com/css?family=Londrina Shadow' rel='stylesheet'>
+        
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
 
-		<div id="popupbox2"> 
-			<form id="register" action="" method="post">
-				<a href="javascript:register('hide'); javascript:login('show');">Login instead</a>
-				<center>Username:</center>
-				<center><input name="username" size="14"/></center>
-				<center>password:</center>				
-				<center><input name="password" type="password" size="14" /></center>
-				<center>Re-enter password:</center>	
-				<center><input name="rpassword" type="password" size="14" /></center>
-				<center><button onclick="registerInfo()">submit</center>
-			</form>
-			<br />
-			<center><a href="javascript:register('hide');">close</a></center> 
-		</div> 		
-		<!---------- End Login/Register ---------->
+        <!-- Horizontal NAVBAR -->    
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center navbar-light" id="navbarH" role="navigation">
+            <!-- Toggler/collapsible Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+            <!-- Links -->
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <!-- Logo -->
+            <div class="Logo">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/Logo/Isobar_Logo.ico" alt="Logo"/>isobar
+            </a></div>
+                
+                <!-- Navigation -->
+            <ul class="navbar-nav">
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link active" href="menus.html">MENUS</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="events.html">EVENTS</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                </li>
+                <li class="nav-item nav-border-right text-center">
+                    <a class="nav-link" href="contactus.html">CONTACT US</a>
+                </li>          
+            </ul>
+            
+                <!-- Login Button -->
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" id="greetings" href="javascript:login('show')">
+                        <button style='font-size:16px'>Log in 
+                            <i class='fas fa-sign-in-alt'></i></button>
+                    </a>
+                </li>
+                <div id="logout"></div>  
+            </ul>
+        </div>
+    </nav>
+        <!-- End Horizontal NAVBAR -->
+    
+    
+    
+        <!-- Body -->
+    <body onload="welcome(); printErr()">
+        <header>
+            <h1 class="text-center text-warning bg-dark">Choose your spirit</h1>
+        </header>        
+        
+        <article>
+                <!-- PayPal "View Cart" Button -->
+            <form target="_self" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <!-- Identify your business so that you can collect the payments. -->
+                <input type="hidden" name="business" value="orders@isobar.com">
 
+                <!-- Specify a PayPal shopping cart View Cart button. -->
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="display" value="1">
 
-		<!---------- Header ---------->
-		<div id="navbarH">
-			<section class="Logo"><a href="index.html"><img src="Images/Logo/Isobar_Logo.ico" alt="Logo" title="(1) Shutterstock (2019). Accessed January 13th, 2019. URL: https://www.shutterstock.com/search/isobar. (2) Pngtree (2019). Accessed January 27th, 2019. URL: https://pngtree.com/freepng/liquid-spilled-beer_608730.html"></img></a> isobar </section>
+                <!-- Continue shopping on the current webpage of the merchant site. -->
+                <input type="hidden" name="menus" value="javascript:history.back()">
 
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="menus.html" class="active">MENUS</a></li>
-				<li><a href="events.html">EVENTS</a></li>
-				<li><a href="aboutus.html">ABOUT US</a></li>
-				<li><a href="contactus.html">CONTACT US</a></li>
+                <!-- Display the View Cart button. -->
+                <input type="image" name="submit"
+                    src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_LG.gif" alt="View Cart">
+            </form>
+                <!-- End PayPal "View Cart" Button -->            
+            
+                <!-- Login/Register -->
+            <section>
+                <div id="popupbox1"> 
+                    <form id="login" action="" method="post">
+                        <a href="javascript:login('hide'); javascript:register('show');">Not registered?</a>
+                        <center>Username:</center>
+                        <center><input name="username" size="14" /></center>
+                        <center>Password:</center>
+                        <center><input name="password" type="password" size="14" /></center><br/>
+                        <center><button onclick="loginInfo()">submit</button></center>
+                        <font id="error" color="red"></font>
+                    </form>
+                    <br/>
+                    <center><a href="javascript:login('hide');">close</a></center> 
+                </div>
+                    
+                <div id="popupbox2"> 
+                    <form id="register" action="" method="post">
+                        <a href="javascript:register('hide'); javascript:login('show');">Login instead</a>
+                        <center>Username:</center>
+                        <center><input name="username" size="14"/></center>
+                        <center>password:</center>				
+                        <center><input name="password" type="password" size="14" /></center>
+                        <center>Re-enter password:</center>	
+                        <center><input name="rpassword" type="rpassword" size="14" /></center><br/>
+                        <center><button onclick="registerInfo()">submit</button></center>
+                    </form>
+                    <br/> 
+                    <center><a href="javascript:register('hide');">close</a></center> 
+                </div> 	
+            </section>
+                <!-- End Login/Register -->
+                    
+                <!-- Vertical NAVBAR Turned Horizontal (visible XS only) -->
+            <section class="d-block d-sm-none nav nav-tabs">
+                <table border="1" class="bg-light ">
+                    <tbody>
+                        <tr class="nav nav-tabs">
+                            <td class="active" data-toggle="tab" href="#Brandy">Brandy</td>
+                            <td data-toggle="tab" href="#Rum">Rum</td>
+                            <td data-toggle="tab" href="#Tequila">Tequila</td>
+                            <td data-toggle="tab" href="#Vodka">Vodka</td>
+                            <td data-toggle="tab" href="#Whisky">Whisky</td>
+                        </tr>
+                    </tbody>
+                </table><br/><br/><br/>
+            </section>
+                <!-- End Vertical NAVBAR Turned Horizontal -->
+            
+                <!-- Main contents -->
+            <section class="container-fluid">
+                <section class="row">
+                        <!-- Vertical NAVBAR -->  
+                    <div class="col-sm-2 d-none d-sm-block">
+                        <aside>
+                            <nav class="navbar bg-light navbar-expand-sm" id="navbarV">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled" tabindex="-1" aria-disabled="true"><strong>SPIRITS</strong></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#Brandy">Brandy</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#Rum">Rum</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#Tequila">Tequila</a>
+                                    </li>                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#Vodka">Vodka</a>
+                                    </li>                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#Whisky">Whisky</a>
+                                    </li>                                
+                                </ul>
+                                </nav>
+                        </aside>        
+                    </div>
+                        <!-- Vertical NAVBAR -->
+                    
+                    <section class="col-sm-10 tab-content">
+                        <div class="row tab-pane fade show active" id="Brandy">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/1920-Brandy.jpg" alt="1920 Brandy" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>1920 Brandy<br>$29.29</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="1920 Brandy">
+                                    <input type="hidden" name="amount" value="29.29">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/D'usse-VSOP.jpg" alt="D'usse VSOP" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>D'usse VSOP<br>$17.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="D'usse VSOP">
+                                    <input type="hidden" name="amount" value="17.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/E&J-Apple.jpg" alt="E&J VS Brandy" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>E &amp; J VS Brandy<br>$25.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="E&J VS Brandy">
+                                    <input type="hidden" name="amount" value="25.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/Fundador.jpg" alt="Fundador" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Fundador<br>$22.29</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Fundador">
+                                    <input type="hidden" name="amount" value="22.29">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                                
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/Lairds-Applejack.jpg" alt="Lairds Applejack" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Lairds Applejack<br>$21.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Lairds Applejack">
+                                    <input type="hidden" name="amount" value="21.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/Macchu-Pisco.jpg" alt="Macchu Pisco" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Macchu Pisco<br>$27.09</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Macchu Pisco">
+                                    <input type="hidden" name="amount" value="27.09">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                                
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/Rujero-Singani.jpg" alt="Rujero Singani" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Rujero Singani<br>$32.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Rujero Singani">
+                                    <input type="hidden" name="amount" value="32.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Brandy/Stock-84.jpg" alt="Stock 84" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Stock 84<br>$24.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Stock 84">
+                                    <input type="hidden" name="amount" value="24.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                            
+                        </div>
+                        <div class="row tab-pane fade" id="Rum">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Bacardi-Gold.jpg" alt="Bacardi Gold" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Bacardi Gold<br>$24.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Bacardi Gold">
+                                    <input type="hidden" name="amount" value="24.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Bacardi-Limon.jpg" alt="Bacardi Limon" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Bacardi Limon<br>$14.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Bacardi Limon">
+                                    <input type="hidden" name="amount" value="14.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Cruzan-Light.jpg" alt="Cruzan Light" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Cruzan Light<br>$12.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Cruzan Light">
+                                    <input type="hidden" name="amount" value="12.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Old-Monk.jpg" alt="Old Monk" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Old Monk<br>$31.59</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Old Monk">
+                                    <input type="hidden" name="amount" value="31.59">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Roanoke.jpg" alt="Roanoke" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Roanoke<br>$29.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Roanoke">
+                                    <input type="hidden" name="amount" value="29.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Rum/Stroh-160.jpg" alt="Stroh 160" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Stroh 160<br>$44.59</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Stroh 160">
+                                    <input type="hidden" name="amount" value="44.59">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>               
+                        </div>    
+                        <div class="row tab-pane fade" id="Tequila">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Tequila/Montezuma-Blue.jpg" alt="Montezuma Blue" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Montezuma Blue<br>$9.29</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Montezuma Blue">
+                                    <input type="hidden" name="amount" value="9.29">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                             
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Tequila/Peligroso-Silver.jpg" alt="Peligroso Silver" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Peligroso Silver<br>$19.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Peligroso Silver">
+                                    <input type="hidden" name="amount" value="19.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                         
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Tequila/Sombra-Mezcal.jpg" alt="Sombra Mezcal" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Sombra Mezcal<br>$34.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Sombra Mezcal">
+                                    <input type="hidden" name="amount" value="34.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                         
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Tequila/Tequila-Cabeza.jpg" alt="Tequila Cabeza" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Tequila Cabeza<br>$53.69</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Tequila Cabeza">
+                                    <input type="hidden" name="amount" value="53.69">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                         
+                        </div>
+                        <div class="row tab-pane fade" id="Vodka">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Vodka/Bedlam-Vodka.jpg" alt="Bedlam Vodka" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Bedlam Vodka<br>$21.49</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Bedlam Vodka">
+                                    <input type="hidden" name="amount" value="21.49">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                             
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Vodka/Belvedere-Vodka.jpg" alt="Belvedere Vodka" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Belvedere Vodka<br>$49.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Belvedere Vodka">
+                                    <input type="hidden" name="amount" value="49.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                             
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Vodka/Haku-Vodka.jpg" alt="Haku Vodka" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Haku Vodka<br>$34.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Haku Vodka">
+                                    <input type="hidden" name="amount" value="34.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                             
+                        </div>
+                        <div class="row tab-pane fade" id="Whisky">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Whisky/Bushmills.jpg" alt="Bushmills" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Bushmills<br>$49.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Bushmills">
+                                    <input type="hidden" name="amount" value="49.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Whisky/Green-Spot.jpg" alt="Green Spot" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Green Spot<br>$51.89</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Green Spot">
+                                    <input type="hidden" name="amount" value="51.89">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Whisky/Kilbeggan.jpg" alt="Kilbeggan" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Kilbeggan<br>$22.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Kilbeggan">
+                                    <input type="hidden" name="amount" value="22.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Whisky/Slane.jpg" alt="Slane" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>Slane<br>$26.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="Slane">
+                                    <input type="hidden" name="amount" value="26.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-6"><img src="Images/Whisky/The-Sexton.jpg" alt="The Sexton" height="150" width="150">
+                                <div><span class="bg-dark text-light"><strong>The Sexton<br>$29.99</strong></span></div>
+                                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="business" value="orders@isobar.com">
+                                    <input type="hidden" name="cmd" value="_cart">
+                                    <input type="hidden" name="add" value="1">
+                                    <input type="hidden" name="item_name" value="The Sexton">
+                                    <input type="hidden" name="amount" value="29.99">
+                                    <input type="hidden" name="currency_code" value="CAD">
+                                    <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+                                </form>
+                            </div>                               
+                        </div>                                    
+                    </section>
+                </section>
+                    <!-- End Menu Items -->
+            </section>
+                <!-- End Main Contents -->
+        </article>
 
-				<div id="greetings"><a href="javascript:login('show');">Login</a></div>
-				<div id="logout"></div>					
-			</ul>
-		</div>
-		<!---------- End Header ---------->
-
-
-
-		<!---------- Vertical Bar ---------->
-		<div id="navbarV">
-			<ul>
-				<li id="vHeader">SPIRITS</li>
-				<li><a class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Brandy')">Brandy</a></li>
-				<li><a class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Rum')">Rum</a></li>
-				<li><a class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Tequila')">Tequila</a></li>
-				<li><a class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Vodka')">Vodka</a></li>
-				<li><a class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Whisky')">Whisky</a></li>
-			</ul>
-		</div>
-		<!---------- End Vertical Bar ---------->
-
-
-		<!---------- Main ---------->
-		<MARQUEE><FONT COLOR="RED">UNDER CONSTRUCTION!!!!</FONT></MARQUEE>
-		
-		<div class="main">		
-			<div class="shelf">
-				<div class="row">
-				<div id="Brandy" class="w3-container city w3-animate-zoom" style="display:block">
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Ansac_Cognac.jpg" alt="Ansac Cognac" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Calvados.jpg" alt="Calvados" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>					
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/E&J.jpg" alt="E&J" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>	
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Martell.jpg" alt="Martell" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price:	$9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Ansac_Cognac.jpg" alt="Ansac Cognac" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Calvados.jpg" alt="Calvados" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>					
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/E&J.jpg" alt="E&J" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price: $9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>	
-
-					<div class="col-lg-3">
-						<img id="spirit-box" src="Images/Brandy/Martell.jpg" alt="Martell" title="https://www.liquor.com/spirit/brandy/#gs.VFYKbMBH" height="150" width="150">
-						<strong><p id="golden-text">SPRITE<br>Price:	$9.95</p></strong>
-						<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="business" value="kin@kinskards.com">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="item_name" value="Alcohol">
-							<input type="hidden" name="amount" value="9.95">
-							<input type="hidden" name="currency_code" value="USD">
-							<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-							<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-						</form>
-					</div>							
-			  	</div></div></div></div>
-				<!-- -->
-				<div id="Rum" class="w3-container city w3-animate-zoom" style="display:none">
-					<img id="spirit-box" src="Images/Rum/Calico-Jack-Cake-Rum.jpg" alt="Calico Jack Cake Rum" title="https://www.liquor.com/spirit/rum/#gs.WUhwjfq3" height="150" width="150">
-					<img id="spirit-box" src="Images/Rum/Coruba-Dark-Rum.jpg" alt="Coruba Dark Rum" title="https://www.liquor.com/spirit/rum/#gs.WUhwjfq3" height="150" width="150">
-					<img id="spirit-box" src="Images/Rum/Cruzan-Blackstrap.jpg" alt="Cruzan Black Strap" title="https://www.liquor.com/spirit/rum/#gs.WUhwjfq3" height="150" width="150">
-					<img id="spirit-box" src="Images/Rum/Don-Q-Gold.jpg" alt="Don Q Gold Rum" title="https://www.liquor.com/spirit/rum/#gs.WUhwjfq3" height="150" width="150">
-			  	</div>
-			  	
-				<div id="Tequila" class="w3-container city w3-animate-zoom" style="display:none">
-					<img id="spirit-box" src="Images/Tequila/Don-Julio-Real.jpg" alt="Don Julio Real" title="https://www.liquor.com/spirit/tequila/#gs.uLl26Cgg" height="150" width="150">
-					<img id="spirit-box" src="Images/Tequila/Herradura-Silver.jpg" alt="Herradura Silver" title="https://www.liquor.com/spirit/tequila/#gs.uLl26Cgg" height="150" width="150">
-					<img id="spirit-box" src="Images/Tequila/Lunazul-Blanco.jpg" alt="Lunazul Blanco" title="https://www.liquor.com/spirit/tequila/#gs.uLl26Cgg" height="150" width="150">
-					<img id="spirit-box" src="Images/Tequila/Resado-Avion.jpg" alt="Resado-Avion" title="https://www.liquor.com/spirit/tequila/#gs.uLl26Cgg" height="150" width="150">
-			  	</div>				
-				
-				<div id="Vodka" class="w3-container city w3-animate-zoom" style="display:none">
-					<img id="spirit-box" src="Images/Vodka/Burnetts-Candy-Cane-Flav.jpg" alt="Burnetts Candy Cane Flav" title="https://www.liquor.com/spirit/vodka/#gs.ilPyS9TK" height="150" width="150">
-					<img id="spirit-box" src="Images/Vodka/Chopin-Potato-Vodka.jpg" alt="Chopin Potato Vodka" title="https://www.liquor.com/spirit/vodka/#gs.ilPyS9TK" height="150" width="150">
-					<img id="spirit-box" src="Images/Vodka/Smirnoff-Sorbet-Light-White-Peach.jpg" alt="Smirnoff Sorbet Light White Peach" title="https://www.liquor.com/spirit/vodka/#gs.ilPyS9TK" height="150" width="150">
-					<img id="spirit-box" src="Images/Vodka/Three-Olives-Root-Beer.jpg" alt="Three Olives Root Beer" title="https://www.liquor.com/spirit/vodka/#gs.ilPyS9TK" height="150" width="150">
-			  	</div>
-
-				<div id="Whisky" class="w3-container city w3-animate-zoom" style="display:none">
-					<img id="spirit-box" src="Images/Whisky/Bartons-Canadian-Whisky.jpg" alt="Bartons Canadian Whisky" title="https://www.liquor.com/spirit/whiskey-2/#gs.ubQ4nqn0" height="150" width="150">
-					<img id="spirit-box" src="Images/Whisky/Blonde-Whiskey.jpg" alt="Blonde Whiskey" title="https://www.liquor.com/spirit/whiskey-2/#gs.ubQ4nqn0" height="150" width="150">
-					<img id="spirit-box" src="Images/Whisky/Virgin-Bourbon.jpg" alt="Virgin Bourbon" title="https://www.liquor.com/spirit/whiskey-2/#gs.ubQ4nqn0" height="150" width="150">
-					<img id="spirit-box" src="Images/Whisky/Woodford-Reserve.jpg" alt="Woodford Reserve Bourbon" title="https://www.liquor.com/spirit/whiskey-2/#gs.ubQ4nqn0" height="150" width="150">
-			  	</div>				
-			</div>
-		</div> <!-- -->
-	</div>
-		<!---------- End Main ---------->
-
-
-		<!-- Footer -->
-		<footer class="panel-footer" id="text-center">
-			<div class="container">
-				<div class="row">
-					<section class="col-lg-4">
-						<span id="golden-text"><strong>Hours:</strong></span><br/>
-						Mon-Fri: 11:00am - 2:00am<br/>
-						Saturday: 9:00am - 2:00am<br/>
-						Sunday: 9:00 am - Midnight
-						<hr>
-					</section>
-					<section class="col-lg-4">
-						<span id="golden-text"><strong>Address:</strong></span><br/>
-						Athabasca University<br/>
-						Athabasca, Alberta
-						AB T9S 3A3 Canada
-						<p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
-						<hr>
-					</section>
-					<section class="col-lg-4" >
-						<div>
-							<span id="golden-text"><strong>Map</strong></span><br/>
-							<a href="https://goo.gl/maps/mYdPFCnrHzG2" target="_blank">
-								<div >
-									<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2304.696758390333!2d-113.31073378455636!3d54.71495807901821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a3d71de4f08a5b%3A0x438e5ad54402680a!2sAthabasca+University!5e0!3m2!1sen!2sca!4v1547257659023" allowfullscreen></iframe>
-								</div>
-							</a>
-						</div>
-					</section>
+		  <!-- Footer -->        
+        <footer class="container-fluid" >
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 text-center">
+				    <span class="text-warning"><strong>Hours:</strong></span><br/>
+				    Mon-Fri: 11:00am - 2:00am<br/>
+				    Saturday: 9:00am - 2:00am<br/>
+				    Sunday: 9:00 am - Midnight
+				    <hr/>
 				</div>
-				<div>&copy; Copyright Isobar 2019</div>
-			</div>
-		</footer>
-
-		<script src="js/script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	</body>
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                    <span class="text-warning"><strong>Address:</strong></span><br/>
+                    <p>University of Manitoba<br/>
+                     66 Chancellors Cir,<br/>
+                     Winnipeg, MB R3T 2N2<br/>
+                    * Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+                    <hr/>
+				</div>
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                    <span class="text-warning"><strong>Map</strong></span><br/>
+                    <a href="https://goo.gl/maps/mYdPFCnrHzG2" target="_blank">
+                        <div >
+                            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.8599392726915!2d-97.1388145842918!3d49.80750077939183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e0!3m2!1sen!2sca!4v1583771368117!5m2!1sen!2sca"  allowfullscreen=""></iframe>
+                        </div>
+                    </a>
+				</div>
+            </div>
+            <p class="text-center">2020 &copy; Developed by <a href="https://github.com/BadaCorp/isobar">BadaCorp</a></p>
+        </footer>
+		  <!-- End Footer -->        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+    </body>
 </html>
