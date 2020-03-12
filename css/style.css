@@ -24,11 +24,7 @@ article
 }
 
 .promos
-{
-
-/*    padding: 50px;
-    background-color: aquamarine;*/
-}
+{}
 
 
 /* Universal Box sizing with inheritance */
@@ -162,24 +158,10 @@ aside li a:hover:not(.active)
   margin-top: 85px;
   /*border: 2px solid #bbb;*/         /*grey*/
   text-align: center;
-  /*margin-left: 26.5%;
-  margin-right: 26.5%;*/
-  /*margin-left: 22%;
-  margin-right: 22%;*/
 }
-
-/*
-.mySlides 
-{
-  display: none;    
-}
-*/
 
 section div div img
 {
-  /*text-align: center;*/
-  /*height: 150px;
-  /*width: 150px;*/
   border: 1px solid #8B4513;    /* Saddle Brown border */
 }
 
@@ -244,31 +226,6 @@ section table tr td:hover:not(.active)
     font-weight: bold;
 }
 
-/*table
-{  
-  margin: auto;
-  border: 1px solid #8B4513;
-  width: 75%;
-  text-align: center;
-}*/
-
-/*th 
-{
-  border: 1px solid #8B4513;
-  background-color: #8B4513;
-  color: white;
-}*/
-
-/*tr
-{
-  border: 1px solid #8B4513;
-}*/
-
-/*tr:nth-child(even)
-{
-  background-color: #f2f2f2
-}*/
-
 
 
 /********* End Main Body ********/
@@ -289,6 +246,7 @@ section table tr td:hover:not(.active)
   padding: 15px;
 }
 
+/*
 .menu ul 
 {
   list-style-type: none;
@@ -300,23 +258,9 @@ section table tr td:hover:not(.active)
 {
   padding: 8px;
   margin-bottom: 7px;
-  /*background-color: #33b5e5;*/
-  /*color: #ffffff;*/
-  /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
 }
+*/
 
-/*.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}*/
 
 /***************** End Grid **************/
 
