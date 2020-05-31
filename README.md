@@ -5,3 +5,6 @@
 
 ![Homepage](/Images/Background/Home.png "Homepage Wireframe")
 
+## Credits
+- [Pictures of products]("https://www.abc.virginia.gov/products")
+
