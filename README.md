@@ -8,5 +8,5 @@
 ## Credits
 - [Pictures of products from Virginia Alcohol Beverage Control Authority](https://www.abc.virginia.gov/products)
 - [Isobar Logo](#)
-- 
+- [Promos and advertisement pictures from Liquour mart](https://www.liquormarts.ca)
 
